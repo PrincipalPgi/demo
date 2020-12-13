@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'Lambda Function fron Cloudformation'
+
+Resources:
+  lambdatest:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Code:
+        ZipFile: >
+          def lambda_handler(event, context):
+              return 'Hello World!!'
+
+      Description: Test with cloud Formation
+      FunctionName: Helloworld
+      Handler: index.lambda_handler
+      Role: arn:aws:iam::840070948554:role/service-role/lamdroledemo
+      Runtime: python3.8
